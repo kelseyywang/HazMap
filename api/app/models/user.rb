@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   def string_conditions
     condition = [
-      :chronic_hiccups
+      :chronic_hiccups,
+      :gastric_implosion,
     ]
     conditions.map { |c| condition[c].to_s }
   end

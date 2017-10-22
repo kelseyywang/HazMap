@@ -15,7 +15,7 @@ class Checkin < ApplicationRecord
       :shortness_of_breath,
       :skin_irritation,
       :stiff_neck,
-      :stiff_back, 
+      :stiff_back,
     ]
     symptoms.map { |s| symptom[s].to_s }
   end
@@ -28,5 +28,17 @@ class Checkin < ApplicationRecord
       :chemical,
     ]
     factors.map { |f| factor[f].to_s }
+  end
+
+  def coords
+    [lat, lon]
+  end
+
+  def self.get_clusters
+    # Return a list of tuples (lat, lon, radius, type)
+    data = self.all.map { |c| c.coords }
+    puts data
+    kmeans = KMeans.new(data, centroids: 5)
+    kmeans.inspect
   end
 end
