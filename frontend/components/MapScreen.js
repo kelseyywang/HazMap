@@ -26,7 +26,8 @@ export default class MapScreen extends React.Component {
         longitude: -122.170,
         latitudeDelta: 0.1,
         longitudeDelta: 0.04,
-      }
+      },
+      coords: null,
     };
     //Firebase configuration
     // const config = {
@@ -44,8 +45,32 @@ export default class MapScreen extends React.Component {
     clearInterval(this.correctLocInterval);
   }
 
+  setAllCoords() {
+    // Post to server
+    const loginRoute = `http://10.21.153.16:3000/checkins/coords`;
+    fetch(loginRoute, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+      },
+    }).then((response) => {
+      console.log(response);
+      if (response.ok === true) {
+        return response.json();
+      } else {
+        console.error(response);
+      }
+    }).then((json) => {
+      console.log(json);
+      this.setState({ coords: json })
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
+
   update() {
     this.setPos();
+    this.setAllCoords();
   }
 
   onRegionChange(region) {
