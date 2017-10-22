@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :checkins do
     collection do
       get 'clusters', to: 'checkins#clusters'
+      get 'coords', to: 'checkins#coords'
     end
   end
   resources :users

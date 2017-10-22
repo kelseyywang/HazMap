@@ -37,11 +37,15 @@ class Checkin < ApplicationRecord
     [lat, lon]
   end
 
+  def self.get_all_coords
+    self.all.map { |checkin| checkin.coords }
+  end
+
   def self.get_clusters(centroids = 10)
     # Return a list of tuples (lat, lon, radius, type)
     data = self.all.map { |c| c.coords }
     puts data
-    kmeans = KMeans.new(data, centroids: 10)
+    kmeans = KMeans.new(data, centroids: 5)
     tuples = []
     nodes = kmeans.nodes
 

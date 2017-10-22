@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 rng = Random.new(seed = 1853957493759375)
-slat = 37.427
-slon = -122.170
-latdx = 1.5
-londx = 3.5
 
+lats = [37.427, 37.620, 37.343, 37.405, 37.512]
+lons = [-122.170, -122.148, -122.320, -122.250, -122.333]
+latdx = 0.03
+londx = 0.07
 
 5.times do |i|
   user = User.create(
@@ -21,10 +21,10 @@ londx = 3.5
     conditions: rng.rand(2).times.to_a
   )
 
-  20.times do |i|
+  20.times do |j|
     checkin = user.checkins.create!(
-      lat: slat + rng.rand(latdx),
-      lon: slon + rng.rand(londx),
+      lat: lats[i] + rng.rand(latdx),
+      lon: lons[i] + rng.rand(londx),
       symptoms: rng.rand(10).times.to_a,
       factors: rng.rand(4).times.to_a,
     )
