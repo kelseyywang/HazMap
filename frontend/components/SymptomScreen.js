@@ -48,7 +48,20 @@ export default class SymptomScreen extends React.Component {
   }
 
   submit() {
-    let symptomArr = [this.state.s1, this.state.s2, this.state.s3, this.state.other];
+    let symptomArr = [this.state.s1,
+      this.state.s2,
+      this.state.s3,
+      this.state.s4, 
+      this.state.s5,
+      this.state.s6,
+      this.state.s7,
+      this.state.s8,
+      this.state.s9,
+      this.state.s10,
+      this.state.s11,
+      this.state.s12,
+      this.state.s13,
+      this.state.other];
     console.log(symptomArr);
     //TODO: send symptomArr to backend
 
