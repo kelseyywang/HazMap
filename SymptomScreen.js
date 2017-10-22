@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import PushDown from '../common/PushDown';
 import Placeholder from '../common/Placeholder';
 import Button from '../common/Button';
-import commonStyles from '../styles/commonstyles';
+import commonStyles from '../styles/commonStyles';
 
 export default class SymptomScreen extends React.Component {
   static navigationOptions = {

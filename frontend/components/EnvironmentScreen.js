@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import PushDown from '../common/PushDown';
 import Placeholder from '../common/Placeholder';
 import Button from '../common/Button';
-import commonStyles from '../styles/commonstyles';
+import commonStyles from '../styles/commonStyles';
 
 export default class EnvironmentScreen extends React.Component {
   static navigationOptions = {
@@ -27,7 +27,7 @@ export default class EnvironmentScreen extends React.Component {
       <Text>Anything unusual in your area?</Text>
        <View style={commonStyles.viewStyle}>
         <Text>Air</Text>
-        
+
         <Button
           onPress={this.handleClick}
           title='Smoke'

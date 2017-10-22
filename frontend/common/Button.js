@@ -13,9 +13,12 @@ export default class Button extends React.Component {
         <TouchableOpacity
           onPress={this.props.onPress}
           style={[buttonStyle,
-            {borderColor: '#000',
-              backgroundColor: '#fff',
-              margin: (this.props.margin || 5),
+            {borderColor: colors.mainButtonTextColor,
+              backgroundColor: colors.mainButtonColor,
+              marginLeft: (this.props.marginSide || 5),
+              marginRight: (this.props.marginSide || 5),
+              marginTop: (this.props.margin || 5),
+              marginBottom: (this.props.margin || 5),
             }]}
         >
           <Text style={[textStyle, {color: colors.mainButtonTextColor}]}>{this.props.title}</Text>

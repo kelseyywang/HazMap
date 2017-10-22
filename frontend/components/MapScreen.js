@@ -5,7 +5,7 @@ import { StackNavigator } from 'react-navigation';
 import PushDown from '../common/PushDown';
 import Placeholder from '../common/Placeholder';
 import Button from '../common/Button';
-import commonstyles from '../styles/commonstyles';
+import commonStyles from '../styles/commonStyles';
 import colors from '../styles/colors';
 import Spinner from '../common/Spinner';
 
@@ -53,9 +53,6 @@ export default class MapScreen extends React.Component {
   }
 
   setPos() {
-    console.log(this.state.initialLat);
-    console.log(this.state.initialLon);
-
     navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({region: {
@@ -74,7 +71,7 @@ export default class MapScreen extends React.Component {
     return (
       <MapView
         provider="google"
-        style={commonstyles.map}
+        style={commonStyles.map}
         showsUserLocation
         region={this.state.region}
         onRegionChange={this.onRegionChange}
@@ -95,14 +92,17 @@ export default class MapScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={commonstyles.viewStyle}>
+      <View style={commonStyles.viewStyle}>
         <PushDown />
+        <Placeholder flex={0.5}>
+          <Text style={commonStyles.mainTextStyle}>Health concerns around you</Text>
+        </Placeholder>
         <Placeholder>
           {this.renderMap()}
         </Placeholder>
         <Placeholder>
           <Button
-            onPress={() => navigate('FeelScreen')}
+            onPress={() => navigate('FeelScreen', { username: this.props.navigation.state.params.username })}
             title='Check In'
             main
           />
