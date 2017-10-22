@@ -45,7 +45,7 @@ const styles = {
   },
   buttonStyle: {
     borderWidth: 0,
-    borderRadius: 3,
+    borderRadius: 8,
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 20,
