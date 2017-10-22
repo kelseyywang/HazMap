@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lat: 1.5
+  lon: 1.5
+  symptoms: MyText
+  comment_symptoms: MyText
+  factors: MyText
+  comment_factors: MyText
+
+two:
+  lat: 1.5
+  lon: 1.5
+  symptoms: MyText
+  comment_symptoms: MyText
+  factors: MyText
+  comment_factors: MyText
