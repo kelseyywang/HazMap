@@ -1,6 +1,6 @@
 const colors = {
   mainButtonColor: '#F28647',
-  mainButtonTextColor: '#fff',
+  mainButtonTextColor: '#000',
   secondaryButtonColor: '#F28647',
   secondaryButtonTextColor: '#fff',
   backgroundColor: '#F28647',

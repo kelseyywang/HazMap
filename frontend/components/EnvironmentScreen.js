@@ -25,45 +25,69 @@ export default class EnvironmentScreen extends React.Component {
     return (
       <ScrollView style={{backgroundColor: '#EFA649'}}>
       <Text>Anything unusual in your area?</Text>
-      <View style={{flex: 2, flexDirection: 'row'}}>
-       <View style={{flex: 1}}>
-        <Text>Respiratory</Text>
+       <View style={commonStyles.viewStyle}>
+        <Text>Air</Text>
         
         <Button
           onPress={this.handleClick}
-          title='Persistent cough'
+          title='Smoke'
           main
         />
 
         <Button
           onPress={this.handleClick}
-          title='Shortness of breath'
+          title='Haze'
           main
         />
-        </View>
 
-        <View style={{flex: 1}}>
-       <Text>Eye/Nose/Throat</Text>
+       <Text>Water</Text>
 
           <Button
             onPress={this.handleClick}
-            title='Eye irritation'
+            title='Abnormal smell or taste'
             main
           />
 
           <Button
             onPress={this.handleClick}
-            title='Nasal congestion'
+            title='Discolored water'
             main
           />
 
           <Button
             onPress={this.handleClick}
-            title='Dry or sore throat'
+            title='Stagnant water'
             main
           />
 
-        </View>
+        <Text>Contaminant Exposure</Text>
+
+          <Button
+            onPress={this.handleClick}
+            title='Mold, Bacteria Growth'
+            main
+          />
+
+          <Button
+            onPress={this.handleClick}
+            title='Chemical Spills'
+            main
+          />
+
+        <Text>Pests</Text>
+
+          <Button
+            onPress={this.handleClick}
+            title='Rodents'
+            main
+          />
+
+          <Button
+            onPress={this.handleClick}
+            title='Insects'
+            main
+          />
+
       </View>
       </ScrollView>
     );
