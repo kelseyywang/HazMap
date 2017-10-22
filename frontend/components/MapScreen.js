@@ -93,7 +93,7 @@ export default class MapScreen extends React.Component {
   }
   renderCircles() {
     //TODO: get the right array of circle numbers
-    const circleList = [[37.43, -122.174, 500, 3], [37.42, -122.18, 1400, 2], [37.40, -122.18, 3000, 1]]
+    const circleList = [[37.43, -122.174, 800, 3], [37.42, -122.08, 1400, 2], [37.49, -122.28, 4000, 3], [37.496, -122.2, 2500, 2], [37.38, -122.154, 1900, 1], [37.35, -122.13, 5000, 1], ]
     var circles = []
     var circleColor1 = colors.circleColor1;
     var circleColor2 = colors.circleColor2;
@@ -147,6 +147,11 @@ export default class MapScreen extends React.Component {
             title='Check In'
             main
           />
+        </Placeholder>
+        <Placeholder flex={0.5}>
+          <Text style={commonStyles.smallTextStyle}>Yellow - 1-5% of users report unusual symptoms</Text>
+          <Text style={commonStyles.smallTextStyle}>Orange - 5-10% of users report unusual symptoms</Text>
+          <Text style={commonStyles.smallTextStyle}>Red - 10%+ of users report unusual symptoms</Text>
         </Placeholder>
       </View>
     );
