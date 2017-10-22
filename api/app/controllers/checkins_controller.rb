@@ -38,6 +38,10 @@ class CheckinsController < ApplicationController
     @checkin.destroy
   end
 
+  def clusters
+    Checkin.get_clusters
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_checkin
