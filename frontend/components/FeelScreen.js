@@ -6,7 +6,7 @@ import Placeholder from '../common/Placeholder';
 import Button from '../common/Button';
 import commonStyles from '../styles/commonstyles';
 
-export default class SymptomScreen extends React.Component {
+export default class FeelScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -24,46 +24,19 @@ export default class SymptomScreen extends React.Component {
   render() {
     return (
       <ScrollView style={{backgroundColor: '#EFA649'}}>
-      <Text>How are you feeling?</Text>
-      <View style={{flex: 2, flexDirection: 'row'}}>
-       <View style={{flex: 1}}>
-        <Text>Respiratory</Text>
-        
-        <Button
+      <View>
+      <Text style={{color: '#000'}}>How are you feeling?</Text>
+       <Button
           onPress={this.handleClick}
-          title='Persistent cough'
+          title='Great!'
           main
         />
 
         <Button
           onPress={this.handleClick}
-          title='Shortness of breath'
+          title='Not very well'
           main
         />
-        </View>
-
-        <View style={{flex: 1}}>
-       <Text>Eye/Nose/Throat</Text>
-
-          <Button
-            onPress={this.handleClick}
-            title='Eye irritation'
-            main
-          />
-
-          <Button
-            onPress={this.handleClick}
-            title='Nasal congestion'
-            main
-          />
-
-          <Button
-            onPress={this.handleClick}
-            title='Dry or sore throat'
-            main
-          />
-
-        </View>
       </View>
       </ScrollView>
     );

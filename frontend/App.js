@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import MapScreen from './components/MapScreen';
 import SymptomScreen from './components/SymptomScreen'
+import FeelScreen from './components/FeelScreen'
 
 
 export default class App extends React.Component {
@@ -12,8 +13,9 @@ export default class App extends React.Component {
 }
 
 const HazMap = StackNavigator({
-  MapScreen: { screen: MapScreen },
+  FeelScreen: { screen: FeelScreen},
   SymptomScreen: { screen: SymptomScreen },
+  MapScreen: { screen: MapScreen },
 });
 
 const styles = StyleSheet.create({
