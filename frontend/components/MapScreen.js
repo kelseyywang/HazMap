@@ -155,13 +155,14 @@ export default class MapScreen extends React.Component {
   }
 
   renderPins() {
-    return this.state.coords.map((coord) => {
+    const coords = this.state.coords.slice(Math.max(this.state.coords.length - 10, 1))
+    return coords.map((coord) => {
       return (
         <MapView.Marker
           coordinate={{
             latitude: coord[0],
             longitude: coord[1],
-            title: this.props.navigation.state.params.username, 
+            title: this.props.navigation.state.params.username,
           }}
         />
       )
