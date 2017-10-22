@@ -53,9 +53,6 @@ export default class MapScreen extends React.Component {
   }
 
   setPos() {
-    console.log(this.state.initialLat);
-    console.log(this.state.initialLon);
-
     navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({region: {
