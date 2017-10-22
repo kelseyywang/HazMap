@@ -20,6 +20,7 @@ const HazMap = StackNavigator({
   SymptomScreen: { screen: SymptomScreen },
   EnvironmentScreen: { screen: EnvironmentScreen},
   MapScreen: { screen: MapScreen },
+});
 
 const styles = StyleSheet.create({
   container: {
