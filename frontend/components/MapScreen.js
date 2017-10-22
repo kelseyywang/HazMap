@@ -71,6 +71,7 @@ export default class MapScreen extends React.Component {
   update() {
     this.setPos();
     this.setAllCoords();
+    console.log('updated');
   }
 
   onRegionChange(region) {
