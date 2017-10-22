@@ -28,20 +28,18 @@ export default class FeelScreen extends React.Component {
     return (
       <ScrollView contentContainerStyle={commonStyles.viewStyle}>
         <PushDown />
-        <Placeholder flex={0.5} />
+        <Placeholder flex={1} />
         <Placeholder>
           <Text style={commonStyles.mainTextStyle}>Would you like to report any problems?</Text>
-        </Placeholder>
-        <Placeholder>
          <Button
             onPress={() =>
               navigate('SymptomScreen', { username: this.props.navigation.state.params.username })
             }
             title='Report Symptoms'
+            margin={20}
             main
           />
-        </Placeholder>
-        <Placeholder>
+
           <Button
             onPress={() =>
               navigate('EnvironmentScreen', { username: this.props.navigation.state.params.username })
@@ -50,7 +48,7 @@ export default class FeelScreen extends React.Component {
             main
           />
         </Placeholder>
-        <Placeholder flex={0.6} />
+        <Placeholder flex={2} />
       </ScrollView>
     );
   }

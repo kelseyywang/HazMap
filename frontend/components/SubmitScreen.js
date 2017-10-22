@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PushDown from '../common/PushDown';
 import Placeholder from '../common/Placeholder';
@@ -22,8 +22,12 @@ export default class SubmitScreen extends React.Component {
       <ScrollView contentContainerStyle={commonStyles.viewStyle}>
         <PushDown />
         <Placeholder flex={0.5} />
+        <Image
+          style={styles.logoStyle}
+          source={require('../images/logo.png')}
+        />
         <Placeholder>
-          <Text style={commonStyles.mainTextStyle}>Thanks for submitting your problem - it will help keep your community more healthy!</Text>
+          <Text style={commonStyles.mainTextStyle}>Thanks for sharing! - It will help keep our community healthy!</Text>
         </Placeholder>
         <Placeholder>
           <Button
@@ -39,3 +43,10 @@ export default class SubmitScreen extends React.Component {
     );
   }
 }
+
+const styles = {
+  logoStyle: {
+    height: 84,
+    width: 100,
+  },
+};

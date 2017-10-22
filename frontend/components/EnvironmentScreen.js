@@ -119,10 +119,8 @@ export default class EnvironmentScreen extends React.Component {
       <ScrollView style={{backgroundColor: colors.backgroundColor}}>
       <View contentContainerStyle={commonStyles.viewStyle}>
         <PushDown />
-        <Placeholder>
-          <Text style={commonStyles.bigTextStyle}>Anything unusual in your area?</Text>
-        </Placeholder>
          <View style={{flex: 4}}>
+          <Text style={commonStyles.bigTextStyle}>Anything unusual in your area?</Text>
           <Text style={commonStyles.titleTextStyle}>Air</Text>
 
           <Button
@@ -213,7 +211,7 @@ export default class EnvironmentScreen extends React.Component {
           <PushDown />
           <PushDown />
           <Button
-              onPress={() => navigate('MapScreen', { username: this.props.navigation.state.params.username })}
+              onPress={() => navigate('SubmitScreen', { username: this.props.navigation.state.params.username })}
               title='Submit'
               marginSide={80}
               margin={20}

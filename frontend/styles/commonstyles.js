@@ -17,7 +17,7 @@ const commonStyles = {
     alignItems: 'center',
   },
   bigTextStyle: {
-    margin: 15,
+    margin: 5,
     fontSize: 25,
     textAlign: 'center',
     lineHeight: 40,

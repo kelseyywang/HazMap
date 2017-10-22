@@ -127,10 +127,9 @@ export default class SymptomScreen extends React.Component {
       <ScrollView style={{backgroundColor: colors.backgroundColor}}>
       <View contentContainerStyle={commonStyles.viewStyle}>
         <PushDown />
-        <Placeholder>
-          <Text style={commonStyles.bigTextStyle}>Unusual Symptoms?</Text>
-        </Placeholder>
          <View style={{flex: 4}}>
+         
+          <Text style={commonStyles.bigTextStyle}>Unusual Symptoms?</Text>
           <Text style={commonStyles.titleTextStyle}>Respiratory</Text>
 
           <Button

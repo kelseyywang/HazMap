@@ -59,12 +59,14 @@ renderForm() {
   return (
     <View style={commonStyles.viewStyle}>
       <PushDown />
-      <Placeholder flex={.6} />
+      <Placeholder flex={1} />
       <Placeholder>
         <Image
           style={styles.logoStyle}
           source={require('../images/logo.png')}
         />
+      </Placeholder>
+      <Placeholder>
       </Placeholder>
       <Placeholder
         noJustify
@@ -111,7 +113,7 @@ render() {
 
 const styles = {
   logoStyle: {
-    height: 84,
-    width: 100,
+    height: 168,
+    width: 200,
   },
 };
