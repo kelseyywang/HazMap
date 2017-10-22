@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import MapScreen from './components/MapScreen';
 import SymptomScreen from './components/SymptomScreen'
 import FeelScreen from './components/FeelScreen'
+import EnvironmentScreen from './components/EnvironmentScreen'
 
 
 export default class App extends React.Component {
@@ -15,6 +16,7 @@ export default class App extends React.Component {
 const HazMap = StackNavigator({
   FeelScreen: { screen: FeelScreen},
   SymptomScreen: { screen: SymptomScreen },
+  EnvironmentScreen: { screen: EnvironmentScreen},
   MapScreen: { screen: MapScreen },
 });
 

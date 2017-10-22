@@ -22,18 +22,23 @@ export default class FeelScreen extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <ScrollView style={{backgroundColor: '#EFA649'}}>
       <View>
       <Text style={{color: '#000'}}>How are you feeling?</Text>
        <Button
-          onPress={this.handleClick}
+          onPress={() =>
+            navigate('EnvironmentScreen')
+          }
           title='Great!'
           main
         />
 
         <Button
-          onPress={this.handleClick}
+          onPress={() =>
+            navigate('SymptomScreen')
+          }
           title='Not very well'
           main
         />
