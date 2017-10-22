@@ -14,12 +14,13 @@ export default class FeelScreen extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(e) {
-    this.setState({})
+    this.setState({
+
+    });
   }
 
   render() {
@@ -29,7 +30,7 @@ export default class FeelScreen extends React.Component {
         <PushDown />
         <Placeholder flex={0.5} />
         <Placeholder>
-          <Text style={commonStyles.mainTextStyle}>Would you like to report any symptoms?</Text>
+          <Text style={commonStyles.mainTextStyle}>Would you like to report any problems?</Text>
         </Placeholder>
         <Placeholder>
          <Button
@@ -43,13 +44,13 @@ export default class FeelScreen extends React.Component {
         <Placeholder>
           <Button
             onPress={() =>
-              navigate('MapScreen', { username: this.props.navigation.state.params.username })
+              navigate('EnvironmentScreen', { username: this.props.navigation.state.params.username })
             }
-            title='Cancel'
+            title='Report Environmental Problems'
             main
           />
         </Placeholder>
-        <Placeholder flex={0.3} />
+        <Placeholder flex={0.6} />
       </ScrollView>
     );
   }

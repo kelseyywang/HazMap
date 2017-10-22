@@ -4,6 +4,9 @@ class Checkin < ApplicationRecord
   serialize :symptoms
   serialize :factors
 
+  # attr_accessor :lat
+  # attr_accessor :lon
+
   def string_symptoms
     symptom = [
       :vomiting,
@@ -34,11 +37,18 @@ class Checkin < ApplicationRecord
     [lat, lon]
   end
 
-  def self.get_clusters
+  def self.get_clusters(centroids = 10)
     # Return a list of tuples (lat, lon, radius, type)
     data = self.all.map { |c| c.coords }
     puts data
-    kmeans = KMeans.new(data, centroids: 5)
-    kmeans.inspect
+    kmeans = KMeans.new(data, centroids: 10)
+    tuples = []
+    nodes = kmeans.nodes
+
+    kmeans.centroids.each do |centroid|
+      num_children = nodes.select { |n| n.closest_centroid == centroid }.length
+      tuples << [centroid.position[0], centroid.position[1], num_children]
+    end
+    tuples
   end
 end

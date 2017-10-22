@@ -11,15 +11,19 @@ export default class SymptomScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
-
+  
   constructor(props) {
     super(props);
 
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(e) {
+  handleClick() {
     this.setState({})
+  }
+
+  renderButton(title, showing) {
+
   }
 
   render() {
@@ -34,7 +38,7 @@ export default class SymptomScreen extends React.Component {
           <Text style={commonStyles.titleTextStyle}>Respiratory</Text>
 
           <Button
-            onPress={this.handleClick}
+            onPress={this.handleClick1}
             title='Persistent cough'
             marginSide={25}
             margin={8}
@@ -42,7 +46,7 @@ export default class SymptomScreen extends React.Component {
           />
 
           <Button
-            onPress={this.handleClick}
+            onPress={this.handleClick2}
             title='Shortness of breath'
             marginSide={25}
             margin={8}
@@ -52,7 +56,7 @@ export default class SymptomScreen extends React.Component {
         <Text style={commonStyles.titleTextStyle}>Dermal and Muscular</Text>
 
           <Button
-            onPress={this.handleClick}
+            onPress={this.handleClick3}
             title='Rash or irritation'
             marginSide={25}
             margin={8}
@@ -60,7 +64,7 @@ export default class SymptomScreen extends React.Component {
           />
 
           <Button
-            onPress={this.handleClick}
+            onPress={this.handleClick4}
             title='Stiffness in neck or back'
             marginSide={25}
             margin={8}
@@ -69,7 +73,7 @@ export default class SymptomScreen extends React.Component {
           <Text style={commonStyles.titleTextStyle}>Behavioral changes</Text>
 
             <Button
-              onPress={this.handleClick}
+              onPress={this.handleClick5}
               title='Fatigue'
               marginSide={25}
               margin={8}
@@ -77,7 +81,7 @@ export default class SymptomScreen extends React.Component {
             />
 
             <Button
-              onPress={this.handleClick}
+              onPress={this.handleClick6}
               title='Memory Loss'
               marginSide={25}
               margin={8}
@@ -86,7 +90,7 @@ export default class SymptomScreen extends React.Component {
             <Text style={commonStyles.titleTextStyle}>Eye/Nose/Throat</Text>
 
             <Button
-              onPress={this.handleClick}
+              onPress={this.handleClick7}
               title='Eye irritation'
               marginSide={25}
               margin={8}
@@ -94,7 +98,7 @@ export default class SymptomScreen extends React.Component {
             />
 
             <Button
-              onPress={this.handleClick}
+              onPress={this.handleClick8}
               title='Nasal congestion'
               marginSide={25}
               margin={8}
@@ -102,7 +106,7 @@ export default class SymptomScreen extends React.Component {
             />
 
             <Button
-              onPress={this.handleClick}
+              onPress={this.handleClick9}
               title='Dry or sore throat'
               marginSide={25}
               margin={8}
@@ -111,7 +115,7 @@ export default class SymptomScreen extends React.Component {
             <Text style={commonStyles.titleTextStyle}>Gastrointestinal</Text>
 
               <Button
-                onPress={this.handleClick}
+                onPress={this.handleClick10}
                 title='Stomach pain'
                 marginSide={25}
                 margin={8}
@@ -119,14 +123,14 @@ export default class SymptomScreen extends React.Component {
               />
 
               <Button
-                onPress={this.handleClick}
+                onPress={this.handleClick11}
                 title='Diarrhea'
                 marginSide={25}
                 margin={8}
                 main
               />
               <Button
-                onPress={this.handleClick}
+                onPress={this.handleClick12}
                 title='Nausea, dizziness'
                 marginSide={25}
                 margin={8}
@@ -134,7 +138,7 @@ export default class SymptomScreen extends React.Component {
               />
 
               <Button
-                onPress={this.handleClick}
+                onPress={this.handleClick13}
                 title='Vomiting'
                 marginSide={25}
                 margin={8}
