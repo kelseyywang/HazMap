@@ -39,7 +39,11 @@ class CheckinsController < ApplicationController
   end
 
   def clusters
-    Checkin.get_clusters
+    render json: Checkin.get_clusters
+  end
+
+  def coords
+    render json: Checkin.get_all_coords
   end
 
   private

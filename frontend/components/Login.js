@@ -31,7 +31,34 @@ export default class SymptomScreen extends React.Component {
     const {email, password} = this.state;
     this.setState({ error: '', loading: true });
     navigate('MapScreen', {username: this.state.email});
+
+    // Post to server
+    const loginRoute = `http://10.21.153.16:3000/users`;
+    fetch(loginRoute, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user: {
+          username: this.state.email,
+        },
+      }),
+    }).then((response) => {
+      console.log(response);
+      if (response.ok === true) {
+        return response.json();
+      } else {
+        console.error(response);
+      }
+    }).then((json) => {
+      console.log(json);
+    }).catch((error) => {
+      console.error(error);
+    });
   }
+
 
   resetForm() {
     this.setState({

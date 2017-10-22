@@ -23,6 +23,13 @@ const commonStyles = {
     lineHeight: 40,
     color: colors.mainTextColor,
   },
+  smallTextStyle: {
+    margin: 5,
+    fontSize: 15,
+    textAlign: 'center',
+    lineHeight: 20,
+    color: colors.mainTextColor,
+  },
   titleTextStyle: {
     margin: 15,
     marginTop: 30,

@@ -38,7 +38,6 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    ai4r (1.13)
     arel (8.0.0)
     builder (3.2.3)
     byebug (9.1.0)
@@ -129,8 +128,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ai4r (~> 1.13)
   byebug
+  distance_measures (~> 0.0.6)
   k_means (~> 0.0.7)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
@@ -140,6 +139,9 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   tzinfo-data
+
+RUBY VERSION
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.15.3
