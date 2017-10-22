@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import PushDown from '../common/PushDown';
 import Placeholder from '../common/Placeholder';
 import Button from '../common/Button';
-import commonStyles from '../styles/commonstyles';
+import commonStyles from '../styles/commonStyles';
 
 export default class EnvironmentScreen extends React.Component {
   static navigationOptions = {
@@ -28,7 +28,7 @@ export default class EnvironmentScreen extends React.Component {
       <View style={{flex: 2, flexDirection: 'row'}}>
        <View style={{flex: 1}}>
         <Text>Respiratory</Text>
-        
+
         <Button
           onPress={this.handleClick}
           title='Persistent cough'

@@ -15,7 +15,10 @@ export default class Button extends React.Component {
           style={[buttonStyle,
             {borderColor: colors.mainButtonTextColor,
               backgroundColor: colors.mainButtonColor,
-              margin: (this.props.margin || 5),
+              marginLeft: (this.props.marginSide || 5),
+              marginRight: (this.props.marginSide || 5),
+              marginTop: (this.props.margin || 5),
+              marginBottom: (this.props.margin || 5),
             }]}
         >
           <Text style={[textStyle, {color: colors.mainButtonTextColor}]}>{this.props.title}</Text>

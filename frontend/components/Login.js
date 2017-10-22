@@ -5,7 +5,7 @@ import { StackNavigator } from 'react-navigation';
 import Placeholder from '../common/Placeholder';
 import Button from '../common/Button';
 import Spinner from '../common/Spinner';
-import commonstyles from '../styles/commonstyles';
+import commonStyles from '../styles/commonStyles';
 import colors from '../styles/colors';
 import { Input } from '../common';
 
@@ -57,7 +57,7 @@ renderButton() {
 
 renderForm() {
   return (
-    <View style={commonstyles.viewStyle}>
+    <View style={commonStyles.viewStyle}>
       <PushDown />
       <Placeholder flex={.6} />
       <Placeholder>
@@ -88,7 +88,7 @@ renderForm() {
         />
     </Placeholder>
       <Placeholder>
-        <Text style={commonstyles.errorTextStyle}>
+        <Text style={commonStyles.errorTextStyle}>
           {this.state.error}
         </Text>
         {this.renderButton()}
@@ -101,7 +101,7 @@ renderForm() {
 render() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View style={commonstyles.viewStyle}>
+      <View style={commonStyles.viewStyle}>
         {this.renderForm()}
       </View>
     </TouchableWithoutFeedback>
