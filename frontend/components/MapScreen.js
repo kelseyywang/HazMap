@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import MapView from 'react-native-maps';
+import { StackNavigator } from 'react-navigation';
 import PushDown from '../common/PushDown';
 import Placeholder from '../common/Placeholder';
 import Button from '../common/Button';
@@ -26,21 +27,20 @@ export default class MapScreen extends React.Component {
   }
 
   componentDidMount() {
-    this.setPos();
-    this.correctLocInterval = setInterval(this.setCorrectLoc.bind(this), 1000);
+    this.correctLocInterval = setInterval(this.update.bind(this), 1000);
   }
 
-  setCorrectLoc() {
-    if (this.state.initialLat === 0 || this.state.initialLon) {
-      this.setPos();
-      clearInterval(this.correctLocInterval);
-    }
+  componentWillUnmount() {
+    clearInterval(this.correctLocInterval);
+  }
+
+  update() {
+    this.setPos();
   }
 
   setPos() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log("pos", position.coords.latitude);
         this.setState({
           initialLat: position.coords.latitude,
           initialLon: position.coords.longitude
@@ -52,9 +52,7 @@ export default class MapScreen extends React.Component {
   }
 
   render() {
-    console.log("pos2", this.state.initialLat);
-    console.log("pos3", this.state.initialLon);
-
+    const { navigate } = this.props.navigation;
     return (
       <View style={commonstyles.viewStyle}>
         <PushDown />
@@ -83,11 +81,10 @@ export default class MapScreen extends React.Component {
         </Placeholder>
         <Placeholder>
           <Button
-            onPress={() => {}}
-            title='Button1'
+            onPress={() => navigate('SymptomScreen')}
+            title='Check In'
             main
           />
-          <Text>This is map screen!</Text>
         </Placeholder>
       </View>
     );
