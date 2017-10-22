@@ -48,7 +48,12 @@ export default class SymptomScreen extends React.Component {
   }
 
   submit() {
+    let symptomArr = [this.state.s1, this.state.s2, this.state.s3, this.state.other];
+    console.log(symptomArr);
+    //TODO: send symptomArr to backend
 
+    const { navigate } = this.props.navigation;
+    navigate('EnvironmentScreen', { username: this.props.navigation.state.params.username });
   }
 
   handleClick1() {

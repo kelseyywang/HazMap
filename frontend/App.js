@@ -6,6 +6,7 @@ import SymptomScreen from './components/SymptomScreen'
 import FeelScreen from './components/FeelScreen'
 import EnvironmentScreen from './components/EnvironmentScreen'
 import Login from './components/Login';
+import SubmitScreen from './components/SubmitScreen';
 
 export default class App extends React.Component {
   render() {
@@ -19,7 +20,7 @@ const HazMap = StackNavigator({
   FeelScreen: { screen: FeelScreen},
   SymptomScreen: { screen: SymptomScreen },
   EnvironmentScreen: { screen: EnvironmentScreen},
-  MapScreen: { screen: MapScreen },
+  SubmitScreen: { screen: SubmitScreen },
 });
 
 const styles = StyleSheet.create({
