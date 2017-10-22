@@ -20,6 +20,9 @@ export default class SubmitScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView contentContainerStyle={commonStyles.viewStyle}>
+      <Image 
+        style={styles.bg}
+        source={require('../images/bg_color.png')}>
         <PushDown />
         <Placeholder flex={0.5} />
         <Image
@@ -39,6 +42,8 @@ export default class SubmitScreen extends React.Component {
           />
         </Placeholder>
         <Placeholder flex={0.6} />
+
+      </Image>
       </ScrollView>
     );
   }
@@ -48,5 +53,12 @@ const styles = {
   logoStyle: {
     height: 84,
     width: 100,
+  },
+  bg: {
+    flex: 1,
+    resizeMode: 'stretch',
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 };

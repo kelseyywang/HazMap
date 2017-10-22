@@ -33,6 +33,7 @@ const commonStyles = {
   },
   mainTextStyle: {
     margin: 15,
+    width: 300,
     fontSize: 20,
     textAlign: 'center',
     lineHeight: 30,

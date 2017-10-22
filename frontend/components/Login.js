@@ -22,7 +22,7 @@ export default class SymptomScreen extends React.Component {
       password: '',
       error: '',
       loading: false,
-      loggedIn: false,
+      loggedIn: false, 
     };
   }
 
@@ -58,6 +58,9 @@ renderButton() {
 renderForm() {
   return (
     <View style={commonStyles.viewStyle}>
+      <Image 
+        style={styles.bg}
+        source={require('../images/bg_color.png')}>
       <PushDown />
       <Placeholder flex={1} />
       <Placeholder>
@@ -73,7 +76,7 @@ renderForm() {
         flex={1.5}
       >
         <Input
-          placeholder="user"
+          placeholder="enter username"
           label="Username"
           value={this.state.email}
           onChangeText={email => this.setState({ email })}
@@ -83,7 +86,7 @@ renderForm() {
 
         <Input
           secureTextEntry
-          placeholder="password"
+          placeholder="enter password"
           value={this.state.password}
           onChangeText={password => this.setState({ password })}
           label="Password"
@@ -96,6 +99,7 @@ renderForm() {
         {this.renderButton()}
       </Placeholder>
       <Placeholder />
+    </Image>
     </View>
   );
 }
@@ -115,5 +119,12 @@ const styles = {
   logoStyle: {
     height: 168,
     width: 200,
+  },
+  bg: {
+    flex: 1,
+    resizeMode: 'stretch',
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 };

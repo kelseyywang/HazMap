@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PushDown from '../common/PushDown';
 import Placeholder from '../common/Placeholder';
@@ -27,6 +27,9 @@ export default class FeelScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView contentContainerStyle={commonStyles.viewStyle}>
+        <Image 
+        style={styles.bg}
+        source={require('../images/bg_color.png')}>
         <PushDown />
         <Placeholder flex={1} />
         <Placeholder>
@@ -39,7 +42,9 @@ export default class FeelScreen extends React.Component {
             margin={20}
             main
           />
-
+          
+        </Placeholder>
+        <Placeholder>
           <Button
             onPress={() =>
               navigate('EnvironmentScreen', { username: this.props.navigation.state.params.username })
@@ -49,7 +54,18 @@ export default class FeelScreen extends React.Component {
           />
         </Placeholder>
         <Placeholder flex={2} />
+        </Image>
       </ScrollView>
     );
   }
 }
+
+const styles = {
+  bg: {
+    flex: 1,
+    resizeMode: 'stretch',
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+};
