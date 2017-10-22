@@ -102,7 +102,7 @@ export default class MapScreen extends React.Component {
         </Placeholder>
         <Placeholder>
           <Button
-            onPress={() => navigate('SymptomScreen')}
+            onPress={() => navigate('FeelScreen')}
             title='Check In'
             main
           />
