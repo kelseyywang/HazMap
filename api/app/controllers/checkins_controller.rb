@@ -54,6 +54,7 @@ class CheckinsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def checkin_params
-      params.require(:checkin).permit(:lat, :lon, :symptoms, :comment_symptoms, :factors, :comment_factors)
+      params.require(:checkin).permit(:lat, :lon, :symptoms, :comment_symptoms, :factors, :comment_factors, :user_id)
     end
+
 end

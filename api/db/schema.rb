@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20171022035748) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "checkins", force: :cascade do |t|
     t.float "lat"
     t.float "lon"
@@ -24,7 +21,7 @@ ActiveRecord::Schema.define(version: 20171022035748) do
     t.text "comment_factors"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_checkins_on_user_id"
   end
 
@@ -37,5 +34,4 @@ ActiveRecord::Schema.define(version: 20171022035748) do
     t.integer "gender", default: 0
   end
 
-  add_foreign_key "checkins", "users"
 end

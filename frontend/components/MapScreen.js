@@ -27,13 +27,16 @@ export default class MapScreen extends React.Component {
         latitudeDelta: 0.1,
         longitudeDelta: 0.04,
       },
+      lat: 0,
+      lon: 0,
       coords: [],
     };
     //Firebase configuration
     // const config = {
     //   something
     // };
-    this.onRegionChange = this.onRegionChange.bind(this)
+    this.onRegionChange = this.onRegionChange.bind(this);
+    this.submit = this.submit.bind(this);
   }
 
   componentDidMount() {
@@ -54,7 +57,6 @@ export default class MapScreen extends React.Component {
         'Accept': 'application/json',
       },
     }).then((response) => {
-      console.log(response);
       if (response.ok === true) {
         return response.json();
       } else {
@@ -63,9 +65,41 @@ export default class MapScreen extends React.Component {
     }).then((json) => {
       // console.log(json);
       this.setState({ coords: json })
+      console.log("Set state of coords")
     }).catch((error) => {
       console.error(error);
     });
+  }
+
+  submit() {
+    const { navigate } = this.props.navigation;
+    // Post to server
+    const loginRoute = `http://10.21.153.16:3000/checkins`;
+    fetch(loginRoute, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        checkin: {
+          lat: this.state.lat,
+          lon: this.state.lon,
+          user_id: 1,
+        },
+      }),
+    }).then((response) => {
+      if (response.ok === true) {
+        console.log("Update is good.")
+        return response.json();
+      } else {
+        console.error(response);
+      }
+    }).then((json) => {
+    }).catch((error) => {
+      console.error(error);
+    });
+    navigate('FeelScreen', { username: this.props.navigation.state.params.username });
   }
 
   update() {
@@ -81,11 +115,14 @@ export default class MapScreen extends React.Component {
   setPos() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        this.setState({region: {
-          latitude: this.state.region.latitude,
-          longitude: this.state.region.longitude,
-          latitudeDelta: this.state.region.latitudeDelta,
-          longitudeDelta: this.state.region.longitudeDelta,
+        this.setState({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+          region: {
+            latitude: this.state.region.latitude,
+            longitude: this.state.region.longitude,
+            latitudeDelta: this.state.region.latitudeDelta,
+            longitudeDelta: this.state.region.longitudeDelta,
         }});
       },
       (error) => this.setState({ error: error.message }),
@@ -118,13 +155,13 @@ export default class MapScreen extends React.Component {
   }
 
   renderPins() {
-    console.log(this.state.coords)
     return this.state.coords.map((coord) => {
       return (
         <MapView.Marker
           coordinate={{
             latitude: coord[0],
             longitude: coord[1],
+            title: this.props.navigation.state.params.username, 
           }}
         />
       )
@@ -159,7 +196,7 @@ export default class MapScreen extends React.Component {
         </Placeholder>
         <Placeholder>
           <Button
-            onPress={() => navigate('FeelScreen', { username: this.props.navigation.state.params.username })}
+            onPress={this.submit}
             title='Check In'
             main
           />
