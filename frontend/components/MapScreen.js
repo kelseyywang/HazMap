@@ -27,7 +27,7 @@ export default class MapScreen extends React.Component {
         latitudeDelta: 0.1,
         longitudeDelta: 0.04,
       },
-      coords: null,
+      coords: [],
     };
     //Firebase configuration
     // const config = {
@@ -61,7 +61,7 @@ export default class MapScreen extends React.Component {
         console.error(response);
       }
     }).then((json) => {
-      console.log(json);
+      // console.log(json);
       this.setState({ coords: json })
     }).catch((error) => {
       console.error(error);
@@ -116,6 +116,20 @@ export default class MapScreen extends React.Component {
     return circles;
   }
 
+  renderPins() {
+    console.log(this.state.coords)
+    return this.state.coords.map((coord) => {
+      return (
+        <MapView.Marker
+          coordinate={{
+            latitude: coord[0],
+            longitude: coord[1],
+          }}
+        />
+      )
+    });
+  }
+
   renderMap() {
     return (
       <MapView
@@ -126,6 +140,7 @@ export default class MapScreen extends React.Component {
         onRegionChange={this.onRegionChange}
       >
         {this.renderCircles()}
+        {this.renderPins()}
       </MapView>
     );
   }
