@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Platform } from 'react-native';
 
+//PUSHDOWN
+//Pushes screen down under notif bar
 export default class PushDown extends React.Component {
   render() {
     return (
