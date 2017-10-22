@@ -66,6 +66,30 @@ export default class MapScreen extends React.Component {
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
     );
   }
+  renderCircles() {
+    //TODO: get the right array of circle numbers
+    const circleList = [[37.43, -122.174, 500, 3], [37.42, -122.18, 1400, 2], [37.40, -122.18, 3000, 1]]
+    var circles = []
+    var circleColor1 = colors.circleColor1;
+    var circleColor2 = colors.circleColor2;
+    var circleColor3 = colors.circleColor3;
+    for (var i = 0; i < circleList.length; i++) {
+      circle = circleList[i];
+      var col = "circleColor" + circle[3];
+      circles.push(
+        <MapView.Circle
+          center={{
+            latitude: circle[0],
+            longitude: circle[1]
+          }}
+          radius={circle[2]}
+          fillColor={eval(col)}
+          strokeColor={eval(col)}
+        />
+      )
+    }
+    return circles;
+  }
 
   renderMap() {
     return (
@@ -76,15 +100,7 @@ export default class MapScreen extends React.Component {
         region={this.state.region}
         onRegionChange={this.onRegionChange}
       >
-        <MapView.Circle
-          center={{
-            latitude: this.state.initialLat,
-            longitude: this.state.initialLon
-          }}
-          radius={100}
-          fillColor={colors.circleColor}
-          strokeColor={colors.circleColor}
-        />
+        {this.renderCircles()}
       </MapView>
     );
   }
