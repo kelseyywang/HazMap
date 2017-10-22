@@ -44,7 +44,7 @@ const styles = {
     fontWeight: '500',
   },
   buttonStyle: {
-    borderWidth: 0,
+    borderWidth: 1,
     borderRadius: 8,
     paddingTop: 10,
     paddingBottom: 10,

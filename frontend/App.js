@@ -4,7 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import MapScreen from './components/MapScreen';
 import SymptomScreen from './components/SymptomScreen'
 import FeelScreen from './components/FeelScreen'
-
+import Login from './components/Login';
 
 export default class App extends React.Component {
   render() {
@@ -13,9 +13,10 @@ export default class App extends React.Component {
 }
 
 const HazMap = StackNavigator({
+  Login: { screen: Login },
+  MapScreen: { screen: MapScreen },
   FeelScreen: { screen: FeelScreen},
   SymptomScreen: { screen: SymptomScreen },
-  MapScreen: { screen: MapScreen },
 });
 
 const styles = StyleSheet.create({
